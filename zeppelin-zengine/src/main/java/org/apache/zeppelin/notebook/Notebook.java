@@ -34,6 +34,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 import com.google.common.collect.FluentIterable;
 import com.google.common.collect.Sets;
+import org.apache.commons.lang.StringUtils;
 import org.apache.zeppelin.interpreter.*;
 import org.apache.zeppelin.interpreter.remote.RemoteAngularObjectRegistry;
 import org.quartz.CronScheduleBuilder;
@@ -293,6 +294,14 @@ public class Notebook implements NoteEventListener {
     synchronized (notes) {
       return notes.get(id);
     }
+  }
+
+  public Note getNoteAfterReloadFromRepo(String noteId) {
+    // Each time the notebook is requested, it is loaded from the storage repository. This helps in fetching the
+    // latest versions of the notebook if a remote repository is used. For example, if GitHub is integrated, whenever
+    // the notebook is requested, it is pulled from the remote repository.
+    loadNoteFromRepo(noteId, new AuthenticationInfo(StringUtils.EMPTY));
+    return getNote(noteId);
   }
 
   public Folder getFolder(String folderId) {

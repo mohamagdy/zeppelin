@@ -247,8 +247,32 @@
 
 <property>
   <name>zeppelin.notebook.storage</name>
-  <value>org.apache.zeppelin.notebook.repo.GitNotebookRepo</value>
+  <value>org.apache.zeppelin.notebook.repo.GitHubNotebookRepo</value>
   <description>versioned notebook persistence layer implementation</description>
+</property>
+
+<property>
+  <name>zeppelin.notebook.git.remote.url</name>
+  <value>git@github.com:mohamagdy/zeppelin-notebooks.git</value>
+  <description>remote Git repository URL</description>
+</property>
+
+<property>
+  <name>zeppelin.notebook.git.remote.username</name>
+  <value>token</value>
+  <description>remote Git repository username</description>
+</property>
+
+<property>
+  <name>zeppelin.notebook.git.remote.access-token</name>
+  <value>1b29e853bc73b90af0d280233101f91b9105d7cb</value>
+  <description>remote Git repository password</description>
+</property>
+
+<property>
+  <name>zeppelin.notebook.git.remote.origin</name>
+  <value>origin</value>
+  <description>Git repository remote</description>
 </property>
 
 <property>
@@ -313,7 +337,7 @@
 
 <property>
   <name>zeppelin.interpreter.connect.timeout</name>
-  <value>30000</value>
+  <value>990000</value>
   <description>Interpreter process connect timeout in msec.</description>
 </property>
 
@@ -480,31 +504,4 @@
   <value>10000:10010</value>
 </property>
 -->
-
-<!-- GitHub configurations
-<property>
-  <name>zeppelin.notebook.git.remote.url</name>
-  <value>git@github.com:mohamagdy/zeppelin-notebooks.git</value>
-  <description>remote Git repository URL</description>
-</property>
-
-<property>
-  <name>zeppelin.notebook.git.remote.username</name>
-  <value>token</value>
-  <description>remote Git repository username</description>
-</property>
-
-<property>
-  <name>zeppelin.notebook.git.remote.access-token</name>
-  <value>1b29e853bc73b90af0d280233101f91b9105d7cb</value>
-  <description>remote Git repository password</description>
-</property>
-
-<property>
-  <name>zeppelin.notebook.git.remote.remote</name>
-  <value>origin</value>
-  <description>Git repository remote</description>
-</property>
--->
-
 </configuration>

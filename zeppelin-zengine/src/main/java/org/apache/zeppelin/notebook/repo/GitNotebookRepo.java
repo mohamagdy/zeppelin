@@ -177,7 +177,7 @@ public class GitNotebookRepo extends VFSNotebookRepo {
   }
 
   //DI replacements for Tests
-  Git getGit() {
+  protected Git getGit() {
     return git;
   }
 
