@@ -128,3 +128,7 @@ tramp
 
 # Git properties
 **/git.properties
+/keyrings/live/pubring.gpg~
+/keyrings/live/pubring.kbx~
+/keyrings/live/secring.gpg
+/conf/zeppelin-site.xml.template
